@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Role Prompt Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Role Prompt Generator</h1>
+        <div class="form-container">
+            <div class="input-group">
+                <label for="role">Role Title:</label>
+                <input type="text" id="role" placeholder="e.g., Professional Chef, Math Tutor">
+            </div>
+            
+            <div class="input-group">
+                <label for="responsibilities">Key Responsibilities:</label>
+                <textarea id="responsibilities" placeholder="What should the AI do in this role?"></textarea>
+            </div>
+            
+            <div class="input-group">
+                <label for="tone">Communication Tone:</label>
+                <select id="tone">
+                    <option value="professional">Professional</option>
+                    <option value="friendly">Friendly</option>
+                    <option value="casual">Casual</option>
+                    <option value="formal">Formal</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <label for="additional-info">Additional Information:</label>
+                <textarea id="additional-info" placeholder="Any other specific requirements or constraints?"></textarea>
+            </div>
+            
+            <button onclick="generatePrompt()">Generate Prompt</button>
+        </div>
+        
+        <div class="result-container">
+            <h2>Generated Prompt:</h2>
+            <div id="result" class="result">
+                <p>Your generated prompt will appear here...</p>
+            </div>
+            <button onclick="copyToClipboard()" id="copy-button">Copy to Clipboard</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
