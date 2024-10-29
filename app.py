@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, jsonify
 import google.generativeai as genai
 import os
 from dotenv import load_dotenv
+import markdown2
 
 load_dotenv()
 
@@ -26,6 +27,10 @@ def generate_prompt(role, responsibilities, tone, additional_info):
     response = model.generate_content(prompt)
     return response.text
 
+# Add this after configuring Gemini AI
+def process_markdown(text):
+    return markdown2.markdown(text)
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -40,7 +45,8 @@ def generate():
     
     try:
         generated_prompt = generate_prompt(role, responsibilities, tone, additional_info)
-        return jsonify({'prompt': generated_prompt})
+        processed_prompt = process_markdown(generated_prompt)
+        return jsonify({'prompt': processed_prompt})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 

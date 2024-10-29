@@ -23,7 +23,7 @@ async function generatePrompt() {
         if (data.error) {
             document.getElementById('result').innerHTML = `<p class="error">Error: ${data.error}</p>`;
         } else {
-            document.getElementById('result').innerHTML = `<p>${data.prompt}</p>`;
+            document.getElementById('result').innerHTML = data.prompt;
         }
     } catch (error) {
         document.getElementById('result').innerHTML = `<p class="error">Error: ${error.message}</p>`;
@@ -32,7 +32,7 @@ async function generatePrompt() {
 
 function copyToClipboard() {
     const result = document.getElementById('result');
-    const text = result.textContent;
+    const text = result.innerText;
     navigator.clipboard.writeText(text).then(() => {
         const button = document.getElementById('copy-button');
         button.textContent = 'Copied!';

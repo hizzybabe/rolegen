@@ -2,4 +2,5 @@ flask
 google-generativeai
 python-dotenv
 gunicorn
+markdown2
 
