@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 # Configure Gemini AI
 genai.configure(api_key=os.getenv('GOOGLE_API_KEY'))
-model = genai.GenerativeModel('gemini-pro')
+model = genai.GenerativeModel('gemini-flash')
 
 def generate_prompt(role, responsibilities, tone, additional_info):
     prompt = f"""

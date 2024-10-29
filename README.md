@@ -1,3 +1,5 @@
+![AI Role Generator](banner.png)
+
 # AI Role Prompt Generator
 
 A web application that generates customized AI role prompts using Google's Gemini AI. This tool helps create detailed, consistent prompts for AI chatbots with specific roles and responsibilities.
