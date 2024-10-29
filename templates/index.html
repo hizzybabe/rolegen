@@ -9,6 +9,10 @@
 <body>
     <div class="container">
         <h1>AI Role Prompt Generator</h1>
+        <button id="theme-toggle" class="theme-toggle">
+            <span class="light-icon">🌞</span>
+            <span class="dark-icon">🌙</span>
+        </button>
         <div class="form-container">
             <div class="input-group">
                 <label for="role">Role Title:</label>
@@ -47,5 +51,6 @@
         </div>
     </div>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
 </body>
 </html>
